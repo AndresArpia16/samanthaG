@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Galaxia de Amor ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Sacramento&family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Canvas principal -->
+  <canvas id="galaxyCanvas"></canvas>
+
+  <!-- Partículas corazones flotantes -->
+  <div id="heartsContainer"></div>
+
+  <!-- Mensajes flotantes -->
+  <div id="floatingMessages"></div>
+
+  <!-- Fotos orbitales -->
+  <div id="photosOrbit"></div>
+
+  <!-- Corazón central clickeable -->
+  <div id="centralHeart">
+    <div class="heart-glow"></div>
+    <div class="heart-pulse">❤️</div>
+    <div class="heart-label">Toca mi corazón</div>
+  </div>
+
+  <!-- Modal mensaje central -->
+  <div id="heartModal" class="hidden">
+    <div class="heart-modal-content">
+      <div class="modal-close" onclick="closeHeartModal()">✕</div>
+      <p class="modal-line1">Desde que llegaste a mi vida,</p>
+      <p class="modal-line2">todo mi universo cambió ❤️</p>
+    </div>
+  </div>
+
+  <!-- Modal fotos -->
+  <div id="photoModal" class="hidden">
+    <div class="photo-modal-bg" onclick="closePhotoModal()"></div>
+    <div class="photo-modal-content">
+      <div class="modal-close" onclick="closePhotoModal()">✕</div>
+      <img id="photoModalImg" src="" alt="Foto romántica" />
+      <div class="photo-dedication"></div>
+    </div>
+  </div>
+
+  <!-- Botón carta -->
+  <button id="btnCarta" onclick="openCarta()">💌 Abrir Carta</button>
+
+  <!-- Modal carta -->
+  <div id="cartaModal" class="hidden">
+    <div class="carta-overlay" onclick="closeCarta()"></div>
+    <div class="carta-envelope">
+      <div class="sobre-flap"></div>
+      <div class="carta-content">
+        <div class="carta-close" onclick="closeCarta()">✕</div>
+        <div class="carta-header">Para: <span id="cartaNombre">Samantha</span> ❤️</div>
+        <div class="carta-body" id="cartaBody"></div>
+        <div class="carta-firma">att: andres❤️</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón música -->
+  <div id="musicControls">
+    <button id="btnMusic" onclick="toggleMusic()">🎵 Nuestra Canción</button>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.5" oninput="setVolume(this.value)" />
+  </div>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop>
+    <source src="music/Enamorado_tuyo.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Secuencia final -->
+  <div id="finalSequence" class="hidden">
+    <div class="final-message" id="finalMsg1">Te Amo Más Allá de las Estrellas ❤️</div>
+    <div class="final-message" id="finalMsg2">Eres el Centro de Mi Universo ❤️</div>
+    <div class="final-message" id="finalMsg3">Para Siempre Tú y Yo ❤️∞</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
